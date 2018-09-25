@@ -41,7 +41,7 @@
                 <input matInput placeholder="Bot entrenador" [(ngModel)]="this.temporalData.outText" name="outText"
                     [disabled]="disabledBot" (keyup)="keyup($event,false)" value="Sushi">
             </mat-form-field> -->
-            <input class="principalInput" placeholder="Bot entrenador" type="text" [(ngModel)]="this.temporalData.outText" name="outText"
+            <input class="principalInput" placeholder="Bot entrenador" type="text" [(ngModel)]="this.temporalData.outText"
                     [disabled]="disabledBot" (keyup)="keyup($event,false)" value="Sushi">
     </div>
     <div fxLayout="column" class="{{training ? 'principalBox' : 'principalBox2'}}" fxFlexOffset="2%" fxFlex="48%">
@@ -49,7 +49,7 @@
         <strong>User: </strong>
                 <div style="text-align: right" class="box"><h3>{{this.pushData.inText}}</h3></div>
             <!-- <mat-form-field class="example-full-width"> -->
-                <input class="principalInput" placeholder="User" type="text" [(ngModel)]="this.temporalData.inText" name="inText"
+                <input class="principalInput" placeholder="User" type="text" [(ngModel)]="this.temporalData.inText"
                     [disabled]="disabledPerson" (keyup)="keyup($event,true)" value="Sushi">
             <!-- </mat-form-field> -->
     </div>
