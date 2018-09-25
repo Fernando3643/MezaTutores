@@ -1,0 +1,23 @@
+.text-box{
+    border: solid black 1px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.inputs-container{
+    margin-left: 30%;
+    margin-right: 20%
+}
+.boxes{
+    width: 50%;
+    float:left;
+    
+   
+}
+.chat-area{
+    width: 100px;
+    text-align: center;
+}
+
+.user-text{
+    width: 150px;
+}
