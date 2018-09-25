@@ -1,31 +1,57 @@
-<div fxLayout="row" style="text-align: center" fxLayoutAlign="space-around center">
-    <h1>Chat Bot ICI 9no</h1>
-</div>
-<div fxLayout="row" style="text-align: center" fxLayoutAlign="space-around center">
-    <strong>Modo: {{training?'Entrenamiento':'Platica'}}</strong>
-    <mat-slide-toggle (click)="changeTypeGame()" [(ngModel)]="training">
-        Cambia
-    </mat-slide-toggle>
-</div>
-<br><br>
-<div class="inputs-container">
+<div class="app">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Chat Bot ICI 9no</span>
+            <span class="example-spacer"></span>
 
-    <div class="boxes">
-        <strong>bot: </strong>{{this.pushData.outText}}
-        <form class="chat-area">
-            <mat-form-field class="example-full-width">
+            <div fxLayout="row" style="text-align: center" fxLayoutAlign="space-around center">
+                    <strong class="example-icon">Modo: {{training?'Entrenamiento':'Platica'}}</strong>
+                    <mat-slide-toggle (click)="changeTypeGame()" [(ngModel)]="training">
+                        Cambia
+                    </mat-slide-toggle>
+            </div>
+
+            <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+            </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>dialpad</mat-icon>
+                      <span>Redial</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                      <mat-icon>voicemail</mat-icon>
+                      <span>Check voicemail</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>notifications_off</mat-icon>
+                      <span>Disable alerts</span>
+                    </button>
+                  </mat-menu> -->
+            <!-- <mat-icon class="example-icon">favorite</mat-icon>
+            <mat-icon class="example-icon">delete</mat-icon> -->
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+<div fxLayout="row" style="text-align: center" class="inputs-container">
+    <div fxLayout="column" fxFlex="48%" fxFlexOffset="1%" class="{{training ? 'principalBox' : 'principalBox2'}}">
+        <strong>Bot: </strong>
+        <div style="text-align: left" class="box"><h3>{{this.pushData.outText}}</h3></div>
+            <!-- <mat-form-field class="example-full-width">
                 <input matInput placeholder="Bot entrenador" [(ngModel)]="this.temporalData.outText" name="outText"
                     [disabled]="disabledBot" (keyup)="keyup($event,false)" value="Sushi">
-            </mat-form-field>
-        </form>
+            </mat-form-field> -->
+            <input class="principalInput" placeholder="Bot entrenador" type="text" [(ngModel)]="this.temporalData.outText" name="outText"
+                    [disabled]="disabledBot" (keyup)="keyup($event,false)" value="Sushi">
     </div>
-    <div class="boxes">
-        <strong>person: </strong>{{this.pushData.inText}}
-        <form class="chat-area">
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Usuario intro" [(ngModel)]="this.temporalData.inText" name="inText"
+    <div fxLayout="column" class="{{training ? 'principalBox' : 'principalBox2'}}" fxFlexOffset="2%" fxFlex="48%">
+        <!-- <strong>person: </strong>{{this.pushData.inText}} -->
+        <strong>User: </strong>
+                <div style="text-align: right" class="box"><h3>{{this.pushData.inText}}</h3></div>
+            <!-- <mat-form-field class="example-full-width"> -->
+                <input class="principalInput" placeholder="User" type="text" [(ngModel)]="this.temporalData.inText" name="inText"
                     [disabled]="disabledPerson" (keyup)="keyup($event,true)" value="Sushi">
-            </mat-form-field>
-        </form>
+            <!-- </mat-form-field> -->
     </div>
+</div>
 </div>

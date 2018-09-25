@@ -4,7 +4,7 @@ import { Conversation } from './conversation';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
@@ -50,13 +50,14 @@ export class AppComponent implements OnInit {
       }
     }else{
       if(enterData.key=="Enter" ){
+        this.pushData.inText = this.pushData.inText + " \n " + this.temporalData.inText;
         let find:boolean=false;
         for(let i=0; i<this.arrayData.length;i++){
            console.log(this.arrayData[i]);
            if(this.arrayData[i].inText==this.temporalData.inText){
              console.log("entrada ya conocida");
              this.temporalData.outText=this.arrayData[i].outText;
-             this.pushData.outText=this.arrayData[i].outText;
+             this.pushData.outText=  this.pushData.outText + ' \n ' +this.arrayData[i].outText;
              this.temporalData.inText="";
              find=true;
            }
@@ -64,6 +65,7 @@ export class AppComponent implements OnInit {
         if(!find){
           this.pushData.outText="Sepa";
         }
+        this.temporalData.inText = '';
       }
     }
 
